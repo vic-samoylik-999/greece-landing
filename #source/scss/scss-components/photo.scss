@@ -1,0 +1,77 @@
+.photo {
+	padding: 80px 0;
+	&__title {
+		margin-bottom: 42px;
+	}
+
+	&__text {
+		padding-bottom: 48px;
+		margin-bottom: 56px;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			width: 270px;
+			height: 1px;
+			background-color: rgba(208, 212, 216, .5);
+			bottom: 0;
+			left: 50%;
+			// margin: 0 auto;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__slider {
+		max-width: 640px;
+		margin: 55px auto 0;
+		filter: drop-shadow(0px 2px 24px rgba(0, 0, 0, .3));
+		.slick-arrow {
+			border: none;
+			width: 40px;
+			height: 40px;
+			background-color: $accent;
+			border-radius: 50%;
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 5;
+			outline: none;
+		}
+		.slick-prev {
+			left: -20px;
+		}
+		.slick-next {
+			right: -20px;
+		}
+		.slick-dots {
+			display: flex;
+			justify-content: center;
+			button {
+				font-size: 0;
+				height: 10px;
+				width: 10px;
+				border-radius: 50%;
+				background-color: rgba(208, 212, 216, 0.5);
+				margin: 0 5px;
+			}
+		}
+		.slick-active {
+			button {				
+				background-color: $accent;
+			}
+		}
+	}
+
+	&__image {
+	}
+	@media (max-width: 740px) {
+		padding: 35px 0;
+		.slick-prev {
+			left: 5px;
+		}
+		.slick-next {
+			right: 5px;
+		}
+	}
+}
